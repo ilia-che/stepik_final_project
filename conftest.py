@@ -13,7 +13,7 @@ def browser(request):
     options.add_experimental_option('prefs', {'intl.accept_languages': browser_locale})
     print("\nstart browser for test..")
     # не забываем указать путь к chromedriver (при необходимости)
-    browser = webdriver.Chrome(chrome_options=options)
+    browser = webdriver.Chrome(options=options)
     yield browser
     print("\nquit browser..")
     browser.quit()
