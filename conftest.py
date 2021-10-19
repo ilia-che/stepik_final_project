@@ -3,14 +3,14 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 def pytest_addoption(parser):
-    parser.addoption('--language', action='store', default=None,
+    parser.addoption("--language", action="store", default="En",
                      help="Choose language: ru,en,...(etc.)")
 
 @pytest.fixture(scope="function")
 def browser(request):
-    browser_locale = request.config.getoption('language')
+    browser_locale = request.config.getoption("language")
     options = Options()
-    options.add_experimental_option('prefs', {'intl.accept_languages': browser_locale})
+    options.add_experimental_option("prefs", {"intl.accept_languages": browser_locale})
     print("\nstart browser for test..")
     # не забываем указать путь к chromedriver (при необходимости)
     browser = webdriver.Chrome(options=options)
