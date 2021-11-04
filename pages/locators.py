@@ -1,5 +1,13 @@
 from selenium.webdriver.common.by import By
 
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_LINK = (By.CSS_SELECTOR,".basket-mini a")
+
+class BasketPageLocators():
+    FIRST_ITEM_IN_BASKET = (By.CSS_SELECTOR, ".basket-items:first-of-type") # первый товар в корзине
+    EMPTY_BASKET_MESSAGE_HYPERLINK = (By.CSS_SELECTOR, "#content_inner p a:not(.btn)")# гиперссылка Continue shopping
 
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
